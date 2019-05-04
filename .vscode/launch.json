@@ -4,7 +4,8 @@
             "type": "java",
             "name": "CodeLens (Launch) - Converter",
             "request": "launch",
-            "mainClass": "Converter"
+            "mainClass": "Converter",
+            "console": "externalTerminal"
         }
     ]
 }

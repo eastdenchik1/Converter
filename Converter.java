@@ -4,25 +4,30 @@
  */
 
 import java.math.BigInteger;
-import java.util.Random;
 import java.util.Scanner;
 
 public class Converter {
 
+    public static String baseConversion(String number, int srcBase, int dstBase) {
+        return Integer.toString(Integer.parseInt(number, srcBase), dstBase);
+    }
+
     public static void main(String[] args) {
-        // BigInteger num = new BigInteger("Z", 36);
-        // BigInteger b = new BigInteger(new BigInteger("8").toString(2), 36);
-        // BigInteger num2 = new BigInteger("10");
-        // System.out.println(num);
-        // System.out.println(num2);
-        // System.out.println(b);
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("Введите число:");
 
-        int number = sc.nextInt();
+        System.out.println("Введите основание исходного числа:");
+        int srcBase = sc.nextInt();
 
-        System.out.println("Спасибо! Вы ввели число " + number);
+        System.out.println("Введите основание итогового числа:");
+        int dstBase = sc.nextInt();
 
+        System.out.println("Введите число для перевода:");
+        String number = String.valueOf(sc.nextInt());
+
+        System.out.println("Исходная система " + srcBase);
+        System.out.println("Итоговая система " + dstBase);
+        System.out.println("Число " + number + "(" + srcBase + ")=" + baseConversion(number, srcBase, dstBase) + "("
+                + dstBase + ")");
     }
 }
